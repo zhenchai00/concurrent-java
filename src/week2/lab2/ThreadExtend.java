@@ -23,6 +23,7 @@ public class ThreadExtend extends Thread {
 		System.out.println("Thread "+threadName+ " exiting.");
 	}
 
+	// // This part run even we commented where this object is extending thread class not implementing
 	// public void start() {
 	// 	System.out.println("Starting "+threadName);
 	// 	if (t==null) {

@@ -22,6 +22,7 @@ public class RunnableThread implements Runnable {
 		System.out.println("Thread " + threadName + " exiting.");
 	}
 	
+	// // This will not able to run if we comment this part where this object is implementing runnable interface not extending thread class
 	// public void start () {
 	// 	System.out.println("Starting " + threadName);
 	// 	if (t == null) {
