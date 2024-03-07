@@ -1,4 +1,4 @@
-package week2.lecturer2;
+package week2.lecture2;
 
 import javax.swing.JFrame;
 
