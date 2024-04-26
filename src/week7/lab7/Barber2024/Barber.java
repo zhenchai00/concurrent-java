@@ -29,6 +29,7 @@ class Barber implements Runnable {
                 if (shop.listCustomer.size() == 0) {
                     System.out.println("Looks like there's " + shop.listCustomer.size() + " left. Going home now.");
                 }
+
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

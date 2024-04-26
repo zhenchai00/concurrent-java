@@ -31,7 +31,7 @@ class Bshop {
         long duration = 0;
         try {
             System.out.println("Cutting hair of Customer : " + customer.getName());
-            duration = (long) (Math.random() * 10);
+            duration = (long) (Math.random() * 3);
             TimeUnit.SECONDS.sleep(duration);
         } catch (InterruptedException iex) {
             iex.printStackTrace();

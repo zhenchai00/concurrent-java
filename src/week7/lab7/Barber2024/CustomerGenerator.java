@@ -20,14 +20,24 @@ class CustomerGenerator implements Runnable {
             thcustomer.start();
 
             try {
-                TimeUnit.SECONDS.sleep((long) (Math.random() * 5));
+                TimeUnit.SECONDS.sleep((long) (Math.random() * 50));
             } catch (InterruptedException iex) {
                 iex.printStackTrace();
             }
         }
         if (closingTime) {
             try {
-                Thread.sleep(5000);
+                Thread.sleep(1000);
+                // check if there are no customers in the shop, barber waits for 1 more customer to come in
+                if (shop.listCustomer.size() == 0) {
+                    System.out.println("Looks like it's been a slow day, let's wait for one more customer");
+                    Customer customer = new Customer(shop);
+                    customer.setInTime(new Date());
+                    Thread thcustomer = new Thread(customer);
+                    customer.setName("Customer " + thcustomer.getId());
+                    thcustomer.start();
+                }
+
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

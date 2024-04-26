@@ -14,6 +14,8 @@ public class Clock extends Thread {
         try {
             Thread.sleep(15000);
             NotifyClosed();
+            cg.setClosingTime();
+            b.setClosingTime();
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
