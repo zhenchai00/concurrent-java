@@ -20,7 +20,15 @@ class Barber implements Runnable {
         }
         if (closingTime) {
             try {
-                Thread.sleep(5000);
+                Thread.sleep(1000);
+                // Check if there are any customers in the shop, if yes, cuthair
+                while (shop.listCustomer.size() != 0) {
+                    System.out.println("Looks like there's " + shop.listCustomer.size() + " left. Next!");
+                    shop.cutHair();
+                }
+                if (shop.listCustomer.size() == 0) {
+                    System.out.println("Looks like there's " + shop.listCustomer.size() + " left. Going home now.");
+                }
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
